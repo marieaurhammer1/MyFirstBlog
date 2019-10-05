@@ -8,9 +8,13 @@
         </div>
 
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post: Kombucha</a></h2>
-            <p>Kombucha has been gaining popularity thoughout the last years and has quite a lot of fans especially in the vegan community!</p>
+            {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+            {% endfor %}
         </div>
     </body>
 </html>
